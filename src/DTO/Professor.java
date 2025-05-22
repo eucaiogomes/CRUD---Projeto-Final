@@ -9,6 +9,15 @@ public class Professor {
 	
 	
 	
+	public void cadastrar(String nomeP, String emailP, String senhaP) {
+		this.nome = nomeP;
+		this.email = emailP;
+		this.senha = senhaP;
+		
+	}
+	
+	
+	
 	
 	public Professor(String nome, String email, String senha) {
 		
