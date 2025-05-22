@@ -6,6 +6,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 import javafx.scene.Parent;
@@ -20,6 +21,14 @@ public class LoginController {
 
     @FXML
     private PasswordField txtSenha;
+
+    @FXML
+    private Pane rootPane;
+
+    @FXML
+    public void initialize() {
+        rootPane.getStylesheets().add(getClass().getResource("/CSS/estilo.css").toExternalForm());
+    }
 
     @FXML
     private void entrar(ActionEvent event) {

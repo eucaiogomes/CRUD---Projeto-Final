@@ -1,0 +1,53 @@
+/* Fundo da tela */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 30px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Títulos */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+/* Campo de texto */
+.text-field, .password-field {
+    -fx-pref-height: 36px;
+    -fx-pref-width: 200px;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #ccc;
+    -fx-background-color: white;
+    -fx-padding: 0 10 0 10;
+}
+
+/* Foco no campo */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #0078d7;
+    -fx-border-width: 2px;
+}
+
+.button {
+    -fx-background-color: #0078d7;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0.0, 0, 1);
+
+    /* Adiciona largura mínima para acomodar o texto */
+    -fx-min-width: 100px;
+}
+
+
+.button:hover {
+    -fx-background-color: #005fa3;
+}
+
+.button:pressed {
+    -fx-background-color: #004080;
+}
