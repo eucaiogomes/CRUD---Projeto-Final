@@ -1,22 +1,29 @@
 package Controller;
 
+import javafx.event.ActionEvent;
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class LoginController {
 
     @FXML
-    private TextField txtUsuario;
+    private TextField txtEmail;
 
     @FXML
     private PasswordField txtSenha;
 
     @FXML
     private void entrar() {
-        String usuario = txtUsuario.getText();
+        String usuario = txtEmail.getText();
         String senha = txtSenha.getText();
 
         if ("admin".equals(usuario) && "1234".equals(senha)) {
@@ -27,6 +34,27 @@ public class LoginController {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setContentText("Usuário ou senha incorretos.");
             alert.show();
+        }	
+    }
+    
+    
+    @FXML
+    private void cadastrar(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/View/TelaCadastro.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Cadastro de Professor");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            // Fecha a tela atual (login)
+            ((Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow()).close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
 }
