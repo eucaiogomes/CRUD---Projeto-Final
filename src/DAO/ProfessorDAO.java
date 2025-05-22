@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import Controller.CadastroController;
 import DTO.Professor;
 import empresa.ConexaoBD;
@@ -21,9 +23,9 @@ public class ProfessorDAO {
 					ps.setString(3, p.getSenha());
 					
 					ps.execute();
-					System.out.println("Professor cadastrado com sucesso!");
+					JOptionPane.showMessageDialog(null,"Professor cadastrado com sucesso!");
 				}catch (SQLException erro) {
-					System.out.println("Erro ao cadastrar Professor"+erro.getMessage());
+					JOptionPane.showMessageDialog(null,"Erro ao cadastrar Professor"+erro.getMessage());
 				}		
 			}
 	
