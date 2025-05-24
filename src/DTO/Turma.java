@@ -3,9 +3,18 @@ package DTO;
 public class Turma {
 	
 	private Integer idTurma;
-	private String nm_turna;
-	private String ds_turma;
+	private String nmTurna;
+	private String dsTurma;
+	private Integer idProfessor;
 	
+	
+	//metodo para criar uma turma
+	public void cadastrarTurma(int idProfessor, String nmTurma,String dsTurma) {
+		this.idTurma = idTurma;
+		this.nmTurna = nmTurma;
+		this.dsTurma = dsTurma;
+		this.idProfessor = idProfessor;
+	}
 	
 	public Turma() {
 		
@@ -13,14 +22,14 @@ public class Turma {
 	
 	public Turma(String nm_turna, String ds_turma) {
 		super();
-		this.nm_turna = nm_turna;
-		this.ds_turma = ds_turma;
+		this.nmTurna = nm_turna;
+		this.dsTurma = ds_turma;
 	}
 	public Turma(Integer idTurma, String nm_turna, String ds_turma) {
 		super();
 		this.idTurma = idTurma;
-		this.nm_turna = nm_turna;
-		this.ds_turma = ds_turma;
+		this.nmTurna = nm_turna;
+		this.dsTurma = ds_turma;
 	}
 	public Integer getIdTurma() {
 		return idTurma;
@@ -29,16 +38,16 @@ public class Turma {
 		this.idTurma = idTurma;
 	}
 	public String getNm_turna() {
-		return nm_turna;
+		return nmTurna;
 	}
 	public void setNm_turna(String nm_turna) {
-		this.nm_turna = nm_turna;
+		this.nmTurna = nm_turna;
 	}
 	public String getDs_turma() {
-		return ds_turma;
+		return dsTurma;
 	}
 	public void setDs_turma(String ds_turma) {
-		this.ds_turma = ds_turma;
+		this.dsTurma = ds_turma;
 	}
 
 }
