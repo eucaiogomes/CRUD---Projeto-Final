@@ -13,14 +13,16 @@ public class TurmaDAO {
 		Turma t = new Turma();
 		t.cadastrarTurma(idProfessor,nmTurma, dsTurma);
 		
-		String sql = "INSERT INTO turma(Professor_idProfessor,nm_turma,ds_turma)VALUES(?,?)";
+		String sql = "INSERT INTO banco_escola.turma(Professor_idProfessor, nm_turma, ds_turma) VALUES (?, ?, ?)";
+;
 		
 		try(Connection conn= ConexaoBD.conectar();
 				PreparedStatement ps = conn.prepareStatement(sql)){
 			
-			ps.setString(1, t.getNm_turna());
-			ps.setString(2, t.getDs_turma());
-		
+			ps.setInt(1, t.getIdProfessor());
+			ps.setString(2, t.getNmTurma());
+			ps.setString(3, t.getDsTurma());
+
 			ps.execute();
 			ps.close();	
 		}catch(SQLException erro)
